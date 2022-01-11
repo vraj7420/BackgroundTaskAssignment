@@ -78,4 +78,11 @@ public class CityScreenActivity extends Activity {
         super.onStop();
         unregisterReceiver(batteryReceiver);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        registerReceiver(batteryReceiver,new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+
+    }
 }
